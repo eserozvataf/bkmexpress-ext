@@ -27,15 +27,12 @@
   "homepage": "https://github.com/eserozvataf/bkmexpress-ext",
   "dependencies": {
     "debug": "^2.2.0",
-    "lodash": "^3.10.1",
-    "moment": "^2.10.6",
-    "soap-express": "1.0.1",
-    "ursa": "^0.9.1"
+    "lodash": "^4.13.1",
+    "moment": "^2.14.1",
+    "soap": "^0.16.0",
+    "ursa": "^0.9.4"
   },
   "devDependencies": {
-    "colors": "^1.1.2",
-    "body-parser": "~1.14.1",
-    "express": "~4.13.3"
   },
   "engines": {
     "node": ">= 0.10.0 <=0.12"
