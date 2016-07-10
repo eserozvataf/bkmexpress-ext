@@ -2,7 +2,7 @@
   "name": "bkmexpress-ext",
   "version": "0.2.20",
   "description": "Nodejs api for bkm express payment system (Turkey)",
-  "main": "bkmexpress.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "node test/index.js"
   },
@@ -27,7 +27,6 @@
   "homepage": "https://github.com/eserozvataf/bkmexpress-ext",
   "dependencies": {
     "debug": "^2.2.0",
-    "lodash": "^4.13.1",
     "moment": "^2.14.1",
     "soap": "^0.16.0",
     "ursa": "^0.9.4"
