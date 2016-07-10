@@ -221,6 +221,114 @@ RedirectModel.prototype.sign = function (key) {
 };
 //endregion
 
+/**
+ * consumerIdWSBaseRequest
+ */
+function ConsumerIdWSResponseCode() {
+	if (!(this instanceof ConsumerIdWSResponseCode)) {
+		return new (Function.prototype.bind.apply(ConsumerIdWSResponseCode, arguments));
+	}
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+}
+ConsumerIdWSResponseCode.prototype.SUCCESS = {"code": 0, "message": "Success"};
+ConsumerIdWSResponseCode.prototype.UNKNOWN_ERROR = {"code": 1, "message": "Unknown Error"};
+ConsumerIdWSResponseCode.prototype.REQUEST_NOT_SYNCHRONIZED = {"code": 2, "message": "Request Not Synchronized"};
+ConsumerIdWSResponseCode.prototype.MAC_VERIFICATION_FAILED = {"code": 3, "message": "MAC Verification Failed"};
+ConsumerIdWSResponseCode.prototype.INPUT_VALIDATION_ERROR = {"code": 4, "message": "INPUT_VALIDATION_ERROR"};
+ConsumerIdWSResponseCode.prototype.CONSUMERID_NOT_EMPTY = {"code": 5, "message": "CONSUMERID_NOT_EMPTY"};
+ConsumerIdWSResponseCode.prototype.CONSUMERID_EMPTY = {"code": 6, "message": "CONSUMERID_EMPTY"};
+ConsumerIdWSResponseCode.prototype.CONSUMERID_NOT_FOUND = {"code": 7, "message": "CONSUMERID_NOT_FOUND"};
+
+/**
+ * ConsumerIdWSBaseRequest
+ */
+var ConsumerIdWSBaseRequest = function () {
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+};
+
+/**
+ * ConsumerIdWSBaseResponse
+ */
+var ConsumerIdWSBaseResponse = function () {
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+};
+/**
+ * result
+ * @type result
+ */
+ConsumerIdWSBaseResponse.prototype.result = {
+	resultCode: '',
+	resultMsg: '',
+	resultDet: ''
+};
+
+/**
+ * consumerOperations
+ */
+var consumerOperations = function () {
+	if (!(this instanceof consumerOperations)) {
+		return new (Function.prototype.bind.apply(consumerOperations, arguments));
+	}
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+};
+/**
+ * consumerOperationsWSRequest
+ */
+consumerOperations.prototype.consumerOperationsWSRequest = '';
+
+/**
+ * consumerOperationsResponse
+ */
+var consumerOperationsResponse = function () {
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+};
+/**
+ * consumerOperationsWSResponse
+ */
+consumerOperationsResponse.prototype.consumerOperationsWSResponse = '';
+
+/**
+ * consumerOperationsWSRequest
+ * @extends ConsumerIdWSBaseRequest
+ */
+var consumerOperationsWSRequest = function () {
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+};
+consumerOperationsWSRequest.prototype = new ConsumerIdWSBaseRequest();
+//consumerOperationsWSRequest.prototype.constructor = consumerOperationsWSRequest;
+_.extend(consumerOperationsWSRequest, ConsumerIdWSBaseRequest);
+consumerOperationsWSRequest.prototype.consumerId = '';
+consumerOperationsWSRequest.prototype.opType = '';
+consumerOperationsWSRequest.prototype.merchantId = '';
+consumerOperationsWSRequest.prototype.transactionId = '';
+consumerOperationsWSRequest.prototype.resultURL = '';
+consumerOperationsWSRequest.prototype.redirectURL = '';
+consumerOperationsWSRequest.prototype.ts = '';
+consumerOperationsWSRequest.prototype.s = '';
+
+/**
+ * consumerOperationsWSResponse
+ * @extends ConsumerIdWSBaseResponse
+ */
+var consumerOperationsWSResponse = function () {
+	if (arguments.length === 1)
+		_.extend(this, arguments[0]);
+};
+consumerOperationsWSResponse.prototype = new merchantWSBaseResponse();
+//consumerOperationsWSResponse.prototype.constructor = consumerOperationsWSResponse;
+_.extend(consumerOperationsWSResponse, ConsumerIdWSBaseResponse);
+consumerOperationsWSResponse.prototype.redirectUrl = '';
+consumerOperationsWSResponse.prototype.transactionId = '';
+consumerOperationsWSResponse.prototype.token = '';
+consumerOperationsWSResponse.prototype.ts = '';
+
+
 module.exports.VirtualPos = VirtualPos;
 module.exports.MerchantWSResponseCode = MerchantWSResponseCode;
 module.exports.merchantWSBaseRequest = merchantWSBaseRequest;
@@ -233,3 +341,7 @@ module.exports.initializePaymentWSRequest = initializePaymentWSRequest;
 module.exports.initializePaymentWSResponse = initializePaymentWSResponse;
 module.exports.IncomingResultModel = IncomingResultModel;
 module.exports.RedirectModel = RedirectModel;
+module.exports.consumerOperations = consumerOperations;
+module.exports.consumerOperationsResponse = consumerOperationsResponse;
+module.exports.consumerOperationsWSRequest = consumerOperationsWSRequest;
+module.exports.consumerOperationsWSResponse = consumerOperationsWSResponse;

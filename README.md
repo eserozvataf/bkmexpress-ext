@@ -1,4 +1,4 @@
-# BKM Express [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status](https://david-dm.org/brendtumi/bkmexpress.svg)](https://david-dm.org/brendtumi/bkmexpress)
+# BKM Express [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status](https://david-dm.org/eserozvataf/bkmexpress-ext.svg)](https://david-dm.org/eserozvataf/bkmexpress-ext)
 > BKM Express payment system api (Turkey) for node.js
 
 ### Not fully tested yet, use your own risk.
@@ -7,12 +7,12 @@ Node.js api for [BKM Express](https://www.bkmexpress.com.tr)
 ## Install
 Install with [npm](http://github.com/isaacs/npm):
 ```
- npm install bkmexpress
+ npm install bkmexpress-ext
 ```
 
 ## Usage
 ```javascript
-var BKM = require("bkmexpress");
+var BKM = require("bkmexpress-ext");
 ```
 > **You can find full express.js example in [example/response.js](example/response.js)**
 
@@ -115,12 +115,13 @@ this will return something like
 then you just need to redirect your client browser.
 
 ## Contributors
-* Author: [Tümay Çeber](https://github.com/brendtumi)
+* Original Author: [Tümay Çeber](https://github.com/brendtumi)
+* Maintainer of Fork: [Eser Ozvataf](http://eser.ozvataf.com/)
 
 [bkm-url]: https://www.bkmexpress.com.tr
-[downloads-image]: http://img.shields.io/npm/dm/bkmexpress.svg
-[npm-url]: https://npmjs.org/package/bkmexpress
-[npm-image]: https://img.shields.io/npm/v/bkmexpress.svg
+[downloads-image]: http://img.shields.io/npm/dm/bkmexpress-ext.svg
+[npm-url]: https://npmjs.org/package/bkmexpress-ext
+[npm-image]: https://img.shields.io/npm/v/bkmexpress-ext.svg
 
-[travis-url]: https://travis-ci.org/brendtumi/bkmexpress
-[travis-image]: http://img.shields.io/travis/brendtumi/bkmexpress.svg
+[travis-url]: https://travis-ci.org/eserozvataf/bkmexpress-ext
+[travis-image]: http://img.shields.io/travis/eserozvataf/bkmexpress-ext.svg

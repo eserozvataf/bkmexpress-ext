@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.3-b01-. --><xs:schema xmlns:tns="http://www.bkmexpress.com.tr" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://www.bkmexpress.com.tr">
+
+<xs:element name="consumerOperations" type="tns:consumerOperations"></xs:element>
+
+<xs:element name="consumerOperationsResponse" type="tns:consumerOperationsResponse"></xs:element>
+
+<xs:complexType name="consumerOperations">
+<xs:sequence>
+<xs:element name="consumerOperationsWSRequest" type="tns:consumerOperationsWSRequest" form="qualified" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consumerOperationsWSRequest">
+<xs:sequence>
+<xs:element name="consumerId" type="xs:string" nillable="true"></xs:element>
+<xs:element name="merchantId" type="xs:string"></xs:element>
+<xs:element name="ts" type="xs:string"></xs:element>
+<xs:element name="s" type="xs:string"></xs:element>
+<xs:element name="opType" type="xs:int"></xs:element>
+<xs:element name="resultURL" type="xs:string"></xs:element>
+<xs:element name="redirectURL" type="xs:string"></xs:element>
+<xs:element name="transactionId" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consumerOperationsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:consumerOperationsWSResponse" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consumerOperationsWSResponse">
+<xs:complexContent>
+<xs:extension base="tns:consumerOperationsWSBaseResponse">
+<xs:sequence>
+<xs:element name="consumerId" type="xs:string" nillable="true"></xs:element>
+<xs:element name="ts" type="xs:string"></xs:element>
+<xs:element name="s" type="xs:string"></xs:element>
+<xs:element name="redirectUrl" type="xs:string"></xs:element>
+<xs:element name="transactionId" type="xs:string"></xs:element>
+<xs:element name="token" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="consumerOperationsWSBaseResponse">
+<xs:sequence>
+<xs:element name="result" type="tns:result"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="result">
+<xs:sequence>
+<xs:element name="resultCode" type="xs:int"></xs:element>
+<xs:element name="resultMsg" type="xs:string"></xs:element>
+<xs:element name="resultDet" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
